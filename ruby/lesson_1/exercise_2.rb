@@ -92,7 +92,7 @@ while true
         
         elsif option.to_i == 6
             break
-            
+
         else 
             print "Số được nhập phải là 1 hoặc 2 hoặc 3 hoặc 4 hoặc 5: "
             option = gets.chomp
@@ -103,7 +103,6 @@ while true
         break
     end    
 end
-
 
 puts "Bài tập 2"
 
@@ -147,7 +146,6 @@ while true
                 next
             end
         end
-
 
         puts "Diện tích hình chữ nhật là : #{(a.to_f * b.to_f).to_s}"
         

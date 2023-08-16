@@ -1,20 +1,25 @@
-require './Document.rb'
+require './Document'
 
 class News < Document
-    attr_accessor :issuedate
-  
-    def initialize(documentcode, pulishername, numberofrelease, price, issuedate)
-        super(documentcode, pulishername, numberofrelease, price)
-        @issuedate = issuedate
-    end
+  attr_accessor :issuedate
 
-    def rentalfee(borrowedhours)
-      super(borrowedhours)
-      return fee = borrowedhours + 20000
-    end
+  def initialize(document_code, pulisher_name, _numberof_release, price, issue_date)
+    super(document_code, pulisher_name, number_of_release, price)
+    @issue_date = issue_date
   end
 
+  def rental_fee(borrowed_hours)
+    super(borrowed_hours)
+    fee = borrowed_hours + 20_000
+  end
+
+  def display
+    super
+    print "Ngày phát hành : #{@issue_date} "
+  end
+end
+
 if $PROGRAM_NAME == __FILE__
-  a = News.new("G01", "PhuongNam", 8, 15000,30)
-  puts "#{a.rentalfee(10)}"
+  a = News.new('G01', 'PhuongNam', 8, 15_000, 30)
+  puts "#{a.rental_fee(10)}"
 end

@@ -1,23 +1,21 @@
 class Document
-  attr_accessor :documentcode, :pulishername, :numberofrelease, :price
+  attr_accessor :document_code, :pulisher_name, :number_of_release, :price
 
-  def initialize(documentcode, pulishername, numberofrelease, price)
-    @documentcode = documentcode
-    @pulishername = pulishername
-    @numberofrelease = numberofrelease
+  def initialize(document_code, pulisher_name, number_of_release, price)
+    @document_code = document_code
+    @pulisher_name = pulisher_name
+    @number_of_release = number_of_release
     @price = price
   end
 
-  def rentalfee(borrowedhours)
-    return fee = @price*borrowedhours
+  def rental_fee(borrowed_hours)
+    fee = @price * borrowed_hours
   end
 
-  def display()
-    print "Mã tài liệu : #{@documentcode} , "
-    print "Tên nhà xuất bản : #{@pulishername} , "
-    print "Số bản phát hành : #{@numberofrelease} , "
-    print "Đơn giá : #{@price} "
-    puts ""
+  def display
+    print "Mã tài liệu : #{@document_code} , "
+    print "Tên nhà xuất bản : #{@pulisher_name} , "
+    print "Số bản phát hành : #{@numberof_release} , "
+    print "Đơn giá : #{@price} , "
   end
-  
 end

@@ -1,30 +1,24 @@
-require './Document.rb'
-require './Book.rb'
-require './Magazine.rb'
-require './News.rb'
+require './Document'
+require './Book'
+require './Magazine'
+require './News'
 
-def infomation(obje)
-  obje.display
-end
+document = Document.new('A01', 'PhuongNam', 2, 10_000)
+book = Book.new('E01', 'HoaBinh', 5, 7000, 'Duy', 195)
+magazine = Magazine.new('K01', 'Trenho', 6, 20_000, 5, 12)
+news = News.new('G01', 'PhuongNam', 8, 15_000, 30)
 
-def computeprice(obje,borrowhours=10)
-  obje.rentalfee(borrowhours)
-end
-
-document = Document.new("A01", "PhuongNam", 2, 10000)
-book = Book.new("E01", "HoaBinh", 5, 7000,"Duy",195)
-magazine = Magazine.new("K01", "Trenho", 6, 20000,5,12)
-news = News.new("G01", "PhuongNam", 8, 15000,30)
-
-puts "Thông tin của từng loại: "
-infos = [infomation(document),infomation(book),infomation(magazine),infomation(news)]
+puts 'Thông tin của từng loại: '
+infos = [document, book, magazine, news]
 
 for info in infos do
+  info.display
+  puts ''
 end
 
 a = 0
-prices = [computeprice(document),computeprice(book),computeprice(magazine),computeprice(news)]
+prices = [document, book, magazine, news]
 for price in prices do
-  a+= price
+  a += price.rental_fee(borrow_hours = 2)
 end
 puts "Tổng tiền thuê tài liệu : #{a}"

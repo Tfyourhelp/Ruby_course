@@ -1,4 +1,4 @@
-class BankAccountManager
+class Bankaccountmanager
   attr_reader :bank_account, :name, :balance
 
   def initialize(bank_account, name, balance)
@@ -92,5 +92,5 @@ class BankAccountManager
   end
 end
 
-duy_account = BankAccountManager.new(0o01, 'Duy', 10_000)
+duy_account = Bankaccountmanager.new(0o01, 'Duy', 10_000)
 duy_account.menu

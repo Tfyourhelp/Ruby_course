@@ -1,106 +1,96 @@
-class Qltknh 
-  attr_reader :mstk, :ten, :sdtk
+class BankAccountManager
+  attr_reader :bank_account, :name, :balance
 
-  def initialize(mstk,ten,sdtk)
-    @mstk = mstk
-    @ten = ten
-    @sdtk = sdtk
+  def initialize(bank_account, name, balance)
+    @bank_account = bank_account
+    @name = name
+    @balance = balance
   end
 
-  def naptientk(sotiennap)
-    @sdtk+=sotiennap
-    puts "Bạn vừa nạp vào #{sotiennap} tiền . Số dư tài khoản bây giờ là #{@sdtk}"
+  def deposit(amount)
+    @balance += amount
+    puts "Bạn vừa nạp vào #{amount} tiền . Số dư tài khoản bây giờ là #{@balance}"
   end
 
-  def ruttien(sotienrut)
-    @sdtk-=sotienrut
-    puts "Bạn vừa rút #{sotienrut} tiền . Số dư tài khoản bây giờ là #{@sdtk}"
-  end
-
-  def saoke(nhapmstk, nhapten)
-    if (@mstk == nhapmstk) && (@ten == nhapten)
-      puts "Tên tài khoản của bạn là #{@ten} . Số dư tài khoản bây giờ là #{@sdtk}"
+  def withdraw(amount)
+    if amount <= @balance
+      @balance -= amount
+      puts "Bạn vừa rút #{amount} tiền . Số dư tài khoản bây giờ là #{@balance}"
     else
-      puts "Mã số tài khoản hoặc tên khoản không chính xác"
+      puts 'Số dư tài khoản không đủ.'
     end
   end
 
-  def capnhattenchuthe(nhapmstk,nhaptentkcu,nhaptentkmoi)
-    if (@mstk == nhapmstk) && (@ten == nhaptentkcu)
-      @ten = nhaptentkmoi
-      puts "Tên tài khoản mới của bạn là #{@ten} . Số dư tài khoản bây giờ là #{@sdtk}"
+  def display_balance(bank_account_input, name_input)
+    if check_info(bank_account_input, name_input)
+      display_info
     else
-      puts "Mã số tài khoản hoặc tên khoản cũ không chính xác"
+      puts 'Mã số tài khoản hoặc tên khoản không chính xác'
     end
   end
 
-  def menu()
-    puts "|-------------MENU-------------|"
-    puts "|1/ Nạp tiền tài khoản         |"
-    puts "|2/ Rút tiền tài khoản         |"
-    puts "|3/ Sao kê tài khoản           |"
-    puts "|4/ Cập nhật tên chủ tài khoản |"
-    puts "|------------------------------|"
+  def change_name(bank_account_input, name_input_old, name_input_new)
+    if check_info(bank_account_input, name_input_old)
+      @name = name_input_new
+      display_info
+    else
+      puts 'Mã số tài khoản hoặc tên khoản cũ không chính xác'
+    end
+  end
+
+  def menu
+    puts '|-------------MENU-------------|'
+    puts '|1/ Nạp tiền tài khoản         |'
+    puts '|2/ Rút tiền tài khoản         |'
+    puts '|3/ Sao kê tài khoản           |'
+    puts '|4/ Cập nhật tên chủ tài khoản |'
+    puts '|------------------------------|'
 
     while true
       option = gets.chomp
-
-      if option.to_i == 1
-        print "Nhập số tiền cần nạp: "
-        sotiennap = gets.chomp
-        naptientk(sotiennap.to_i)
+      case option.to_i
+      when 1
+        print 'Nhập số tiền cần nạp: '
+        amount = gets.chomp
+        deposit(amount.to_i)
         break
-      elsif option.to_i == 2
-        print "Nhập số tiền cần rút: "
-        sotienrut = gets.chomp
-        ruttien(sotienrut.to_i)
+      when 2
+        print 'Nhập số tiền cần rút: '
+        amount = gets.chomp
+        withdraw(amount.to_i)
         break
-      elsif option.to_i == 3
-        print "Nhập mã số tài khoản: "
-        nhapmstk = gets.chomp
-        print "Nhập tên tài khoản:"
-        nhapten = gets.chomp
-        saoke(nhapmstk.to_i,nhapten)
+      when 3
+        print 'Nhập mã số tài khoản: '
+        bank_account_input = gets.chomp
+        print 'Nhập tên tài khoản:'
+        name_input = gets.chomp
+        display_balance(bank_account_input.to_i, name_input)
         break
-      elsif option.to_i == 4
-        print "Nhập mã số tài khoản: "
-        nhapmstk =gets.chomp
-        print "Nhập tên tài khoản cũ: "
-        nhaptentkcu = gets.chomp
-        print "Nhập tên tài khoản mới: "
-        nhaptentkmoi = gets.chomp
-        capnhattenchuthe(nhapmstk.to_i,nhaptentkcu,nhaptentkmoi)
+      when 4
+        print 'Nhập mã số tài khoản: '
+        bank_account_input = gets.chomp
+        print 'Nhập tên tài khoản cũ: '
+        name_input_old = gets.chomp
+        print 'Nhập tên tài khoản mới: '
+        name_input_new = gets.chomp
+        change_name(bank_account_input.to_i, name_input_old, name_input_new)
         break
-      else 
-        puts "Vui lòng nhập giá trị là 1 hoặc 2 hoặc 3 hoặc 4"
-      end 
+      else
+        puts 'Vui lòng nhập giá trị là 1 hoặc 2 hoặc 3 hoặc 4'
+      end
     end
   end
-end
 
-class Duy < Qltknh
-  def initialize(mstk = 1111, ten = "Duy", sdtk = 50)
-    super(mstk, ten, sdtk)
+  private
+
+  def check_info(bank_account_input, name_input)
+    (@bank_account == bank_account_input) && (@name == name_input)
+  end
+
+  def display_info
+    puts "Tên tài khoản của bạn là #{@name}. Số dư tài khoản bây giờ là #{@balance}"
   end
 end
 
-class Minh < Qltknh
-  def initialize(mstk = 2222, ten = "Minh",sdtk = 30)
-    super(mstk, ten, sdtk)
-  end
-end
-
-class Phuoc < Qltknh
-  def initialize(mstk = 3333, ten = "Phuoc",sdtk = 40)
-    super(mstk, ten, sdtk)
-  end
-end
-
-class Tri < Qltknh
-  def initialize(mstk = 4444, ten = "Tri",sdtk = 30)
-    super(mstk, ten, sdtk)
-  end
-end
-
-duy_account = Duy.new
+duy_account = BankAccountManager.new(0o01, 'Duy', 10_000)
 duy_account.menu

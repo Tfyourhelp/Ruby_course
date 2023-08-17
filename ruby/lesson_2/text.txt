@@ -1,0 +1,7 @@
+object : +gọi hàm biến ngoài class
+      + gọi object là gọi a = People.new(name = , age =) ( a là object)
+
+method parameter (giá trị biến của hàm)
+
+để private khi mà muốn giấu hàm ( những hàm tính toán kh cần thiết) , hoặc là để bảo mật thông tin (biến)
+gọi hàm, biến trong class 

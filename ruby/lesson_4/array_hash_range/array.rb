@@ -9,8 +9,8 @@ reversed_array = arr.reverse
 puts "Mảng sau khi đảo ngược #{reversed_array} "
 
 #3/
-unique_element = arr.uniq
-puts "Phần tử duy nhất trong mảng #{unique_element}"
+unique_elements = arr.select { |element| arr.count(element) == 1 }
+puts "Phần tử duy nhất trong mảng #{unique_elements}"
 
 #4/
 def get_even(arr)
@@ -30,4 +30,3 @@ array1 = [1, 2, 3]
 array2 = [4, 5, 6]
 array1.concat(array2)
 puts "Mảng sau khi nối là #{array1}"
-

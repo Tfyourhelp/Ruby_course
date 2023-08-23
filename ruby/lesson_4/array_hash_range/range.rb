@@ -18,8 +18,9 @@ end
 
 def check_number(number_to_check)
   if (1..100).include?(number_to_check)
-    return puts "số cần kiểm tra nằm trong phạm vi từ 1 đến 100."
+    puts "số cần kiểm tra nằm trong phạm vi từ 1 đến 100."
+  else
+    puts "Số cần kiểm tra không nằm trong phạm vi từ 1 đến 100."
   end
-  return puts "số cần kiểm tra không nằm trong phạm vi từ 1 đến 100."
-  end
-check_number(number_to_check = 42)
+end
+check_number(number_to_check = 101)

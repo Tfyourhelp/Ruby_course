@@ -1,0 +1,614 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+.all{ 
+    width: 100%; 
+    display: flex;
+    padding: 40px 120px 143px 120px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 38px;
+    box-sizing: border-box;
+    }
+
+@media  (max-width: 991px){
+    .all {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        box-sizing: border-box;
+        padding: 130px 30px 40px 30px;
+    }
+    }
+
+@media  (max-width: 403px){
+    .all {
+        width: 343px;
+        box-sizing: border-box;
+        padding: 24px 16px 35px 24px;
+        margin-top:64px;
+        gap: 42px;
+        box-sizing: border-box;
+    }
+    }
+
+
+
+.content{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 50px; */
+    width:100%;
+    flex:1;
+
+}
+
+.sidebar {
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 15px 50px 0px rgba(44, 125, 192, 0.15);
+    border: 10;
+    width: 260px;
+}
+
+
+@media  (max-width: 991px){
+    .sidebar {
+        width: 100%;
+    } 
+}
+
+
+
+.sidebar__top{
+    padding: 30px 40px 19px 40px;
+    text-align: center;  /* để canh chữ giữa của các giá trị con   */
+}
+
+
+.sidebar__top > img {
+    border-radius: 40px;
+    }
+    
+
+@media  (max-width: 991px){
+    .sidebar__top {
+        /* padding: 0px 408px 24px 344px; */
+
+        position: relative;
+    }
+
+    .sidebar__top > img {
+            position: absolute;
+           
+            width: 120px;
+            height: 120px;
+            top: -50%;
+            left:50%; /* làm cho ảnh căn giữa */
+            transform: translateX(-50%);  /* làm cho ảnh căn giữa */
+        }
+    }
+ 
+
+.CarlosTames {
+    color: #222B63;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding: 13px 0px;
+    margin:0;
+    text-align: center;
+    }
+
+.Rectangle10{
+    box-sizing: border-box;
+    background: #DDEFF8;
+    border-radius: 15px;
+}
+
+.social{
+    display: flex;
+    height: 24px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 16px
+}
+
+.icon{
+    width: 24px;
+    height: 24px;
+    color:#6C6C6C
+}
+
+.FrontendDeveloper{
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 6px 14px 7px 13px;
+    margin:0;
+}
+
+
+.Information1{
+    background: #F1F7FB;
+    padding: 20px 20px 20px 20px;
+}
+@media (min-width:767px) and (max-width: 991px) {
+    .Information1{
+        padding: 0px 20px 20px 20px;
+    }
+    }
+
+
+@media (min-width:767px) and (max-width: 991px) {
+    .Information1__top{
+        display: flex;
+        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end
+    }
+    }
+
+
+.text {
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin:0px;
+    }
+
+
+.wraptext{
+    display : flex;
+    /* margin:0px; */
+    align-items:center;
+    gap:14px;
+         
+}
+/* chỉnh thông số css của nhữg thằng con của kế 1 bậc ngoại trừ thằng con kế 1 bậc đầu tiên */
+@media (min-width: 991px) {
+    .wraptext:not(:first-child){
+        margin-top:18px;
+    }
+    }    
+    
+
+@media (min-width:767px) and (max-width: 991px) {
+    .wraptext{
+        margin-top:23px;
+    }
+    }
+
+@media (max-width:767px){
+    .wraptext:not(:first-child){
+        margin-top:18px;
+    }
+    }
+
+.buttonDownloadCV {
+    display: inline-block;
+    border: none;
+    border-radius: 16px;
+    background-color: #222B63;
+    color: #ffffff;
+    cursor: pointer;
+    width: 182px;
+    height: 50px;
+    margin: 0px 19px;
+    margin-top: 26px;
+    padding: 0px
+    }
+
+
+.buttonDownloadCV:hover {
+    background-color: #2C3E70;
+}
+
+@media  (max-width: 991px) {
+    .buttonDownloadCV{
+        width: 100%;
+        height: 50px;
+        margin: 0px;
+        /* margin-left: 284px; */
+        margin-top: 30px;
+    }
+    }
+
+
+
+.textDownloadCV {
+    color: #FFF;
+    text-align: center;
+    font-family: Noto Sans JP;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 13px 15px 14px 15px;
+}
+
+.aboutmesection {
+    display: flex;
+    padding : 24px 40px 30px 30px;
+    flex-direction: column;
+    gap: 29px;
+    border-bottom: 1px solid #2C7DC0;
+}
+
+.Information2 {
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 0px 6px 3px #CCE6FC;
+}
+
+.aboutmeh2 {
+    color: #222B63;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.hithere {
+    /* height: 78px; */
+    color: #000;
+    text-align: justify;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.skillsection{
+    border-bottom: 1px solid #2C7DC0;
+}
+
+.skillh2{
+    color: #222B63;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.twoskill{
+    display:flex;
+    gap:41.11px;
+    margin-top:30px
+}
+
+/* .twoskill:last-child{
+    width:48.5%
+} */
+      
+@media (max-width:991px) {
+    .twoskill{
+        flex-direction: column;
+        gap:24px
+    }
+    }
+
+
+
+
+.Experience{
+    border-bottom: 1px solid #2C7DC0;
+}
+
+.WorkExperience{
+    color: #222B63;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.Education{
+    /* display: inline-flex; */
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.frame16{
+    flex-shrink: 0;
+    border-radius: 4px;
+    border-left: 2px solid #2C7DC0;
+    background: #FFF;
+    box-shadow: 0px 0px 6px 3px rgba(44, 125, 192, 0.13);
+    padding:24px;
+    margin-top:30px;
+}
+
+@media (max-width:767px) {
+    .frame16{
+        margin-top:20px;
+    }
+    }
+
+
+
+
+.Frontendtext{
+    color: #000;;
+    text-align: justify;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.atABC2{
+    color: #6C6C6C;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.May{
+    /* width: 242px; */
+    color: #6C6C6C;
+    text-align: justify;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.Leverage{
+    /* width: 793px; */
+    color: #000;
+    text-align: justify;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* .frame6{
+    width: 50%;
+    margin-left:30px;
+    margin-top: 30px
+} */
+
+.frame6{ 
+    width: 100%;
+    margin-left:0px;
+}
+
+.frame7{ 
+    width: 100%;
+    margin-left:0px;
+    display: block;
+}
+
+@media (max-width: 991px) {
+    .frame7 {
+      display: none; /* Hiển thị div khi màn hình rộng hơn 990px */
+    }
+  }
+
+
+.skilltext{
+    color: #2C7DC0;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.bg{
+    width: 100%;
+    /* width:400px ; */
+    height: 12px;
+    /* cce6fc */
+    border-radius: 22px;
+    background: #cce6fc;
+}
+
+
+
+.rectangle45{
+    /* width: 320px; */
+    width: calc((var(--percent))*100%);
+    height: 12px;
+    border-radius: 22px;
+    background: #2C7DC0;
+}
+
+.form{
+    /* width: 900px; */
+    /* height: 436px; */
+    margin-top:50px;
+    /* flex-shrink: 0; */
+    border-radius: 10px;
+    background: #2C7DC0;
+    padding: 24px 30px 26px 39px;
+}
+
+.Contact{
+    color: #FFF;
+    font-family: Inter;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.FullnameEmail{
+    display:flex; 
+    flex-direction: row; 
+    padding-top: 30px;
+    gap :40px; 
+    box-sizing: border-box;
+}
+
+@media (max-width:767px) {
+    .FullnameEmail{
+        flex-direction: column;
+        gap :20px; 
+    }
+    }
+
+
+/* .formitem{
+    width:calc(50% - 20px);
+    flex-shrink: 0; 
+}  */
+
+
+.FullnameEmail > .formitem{
+    width:calc(50% - 20px);
+    flex-shrink: 0;
+    display:flex;
+    flex-direction: column
+} 
+
+.form > .formitem{
+    width:100%;
+    flex-shrink: 0;
+    display:flex; 
+    flex-direction: column; 
+    padding-top: 30px
+}
+
+@media (max-width:767px) {
+    .FullnameEmail > .formitem{
+        width:100%;
+    } 
+    .form > .formitem{
+        padding-top: 20px;
+    }
+
+
+    }    
+
+
+
+.formtext{
+    /* width: 400px; */
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.Rectangle13{
+    width: 100%;
+    height: 50px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 2px solid #FFF;
+    background: #FFF;
+/* 
+    color: #2C7DC0;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 117px;
+    height: 20px;
+    flex-shrink: 0; */
+}
+
+.NguyenVanA{
+    color: #2C7DC0;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 117px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.Rectangle113{
+    /* width: 841px; */
+    width:100%;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 2px solid #FFF;
+    background: #FFF;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonsend{
+    width:230px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border-color: #FFF;
+    background: #FFF;
+}
+
+
+@media (max-width:767px) {
+    .buttonsend{
+        width:100%;
+    } 
+    }  
+
+
+.textsend{
+    color: #2C7DC0;
+    text-align: center;
+    font-family: Noto Sans JP;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 120% */
+    width: 200px;
+}
+
+input{
+    width: 100%;
+    height: 20px;
+    flex-shrink: 0;
+    color: #2C7DC0;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 16px;
+    box-sizing: border-box;
+}
+

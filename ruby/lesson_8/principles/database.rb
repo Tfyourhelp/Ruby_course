@@ -7,8 +7,6 @@ class Database
     @database_name = database_name
   end
 
-  private
-
   def find_database_instance
     SQLite3::Database.new(database_name)
   end

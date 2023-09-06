@@ -40,7 +40,6 @@ class User
     end
   end
 
-  
   private
   def get_user_params
     # Format thông tin của user account

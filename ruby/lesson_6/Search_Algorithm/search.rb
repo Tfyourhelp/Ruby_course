@@ -1,5 +1,13 @@
 puts "=========Câu 1================"
 
+def display_search_result(target, array , index)
+  if index != -1
+    puts "Target #{target} found in #{array.sort} at index #{index}"
+  else
+    puts "Target not found in #{array.sort}"  
+  end
+end
+
 def linear_search(target, array)
   array.each_with_index do |value,index|
     if target == value
@@ -12,11 +20,7 @@ end
 array  = [1,4,5,2,1,5,6,7,2]
 target = 1
 index = linear_search(target, array)
-if index != -1
-  puts "Target #{target} found in #{array.sort} at index #{index}"
-else
-  puts "Target not found in #{array.sort}"   
-end
+display_search_result(target, array, index)
 
 def binary_search(target, array)
   left = 0
@@ -38,11 +42,8 @@ end
 array  = [1, 8, 5, 3, 7, 2]
 target = 3
 index = binary_search(target, array.sort)
-if index != -1
-  puts "Target #{target} found in #{array.sort} at index #{index}"
-else
-  puts "Target not found in #{array.sort}"  
-end
+display_search_result(target, array.sort, index)
+
 
 puts "=========Câu 2================"
 
@@ -67,13 +68,14 @@ end
 array  = [1, 8, 5, 3, 7, 2]
 target = 3
 index = reverse_binary_search(target, array.sort.reverse)
-if index != -1
-  puts "Target #{target} found in #{array.sort.reverse} at index #{index}"
-else
-  puts "Target not found in #{array.sort.reverse}"  
-end
+display_search_result(target, array.sort.reverse, index)
 
 puts "============Câu 3================"
+
+def display_min_max_result(array, min_value, min_value_index, max_value, max_value_index)
+  puts "Max value found in #{array} is #{max_value} at index #{max_value_index}"
+  puts "Min value found in #{array} is #{min_value} at index #{min_value_index}"
+end
 
 def find_max_value(array)
   max_value = array[0]
@@ -106,6 +108,4 @@ end
 array  = [6,8, 5, 3, 7, 2]
 min_value, min_value_index = find_min_value(array)
 max_value, max_value_index = find_max_value(array)
-
-puts "Max value found in #{array} is #{max_value} at index #{max_value_index}"
-puts "Min value found in #{array} is #{min_value} at index #{min_value_index}"
+display_min_max_result(array, min_value, min_value_index, max_value, max_value_index)

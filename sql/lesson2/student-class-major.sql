@@ -21,7 +21,7 @@ CREATE TABLE MAJOR(
 	name varchar(100)
 );
 
--- Insert data:
+-- Thực hiện tạo bảng và insert dữ liệu mẫu
 INSERT INTO STUDENT (id, name, age, class_id)
 VALUES
 (1, 'Nguyễn Văn A', 21, 5),
@@ -49,13 +49,14 @@ VALUES
 (3, 'Đ-ĐT'),
 (4, 'KTHH');
 
-
+-- Viết câu lệnh xuất ra thông tin học sinh và tên lớp
 SELECT STUDENT.id, STUDENT.name, STUDENT.age, STUDENT.class_id, CLASS.name
 FROM STUDENT
 INNER JOIN CLASS
 ON STUDENT.class_id = CLASS.id
 ORDER BY STUDENT.id;
 
+-- Viết câu lệnh xuất ra thông tin học sinh, tên lớp và tên ngành học tương ứng
 SELECT STUDENT.id, STUDENT.name, STUDENT.age, STUDENT.class_id, CLASS.name as class, MAJOR.name as major
 FROM STUDENT
 INNER JOIN CLASS
@@ -64,6 +65,7 @@ INNER JOIN MAJOR
 ON CLASS.major_id = MAJOR.id
 ORDER BY STUDENT.id;
 
+-- Viết câu lệnh xuất ra danh sách lớp học không có học sinh
 SELECT  CLASS.name as class, STUDENT.id, STUDENT.name, STUDENT.age, STUDENT.class_id
 FROM CLASS
 LEFT JOIN STUDENT
@@ -71,19 +73,21 @@ ON STUDENT.class_id = CLASS.id
 WHERE STUDENT.name IS NULL
 ORDER BY STUDENT.id
 
+-- Viết câu lệnh xuất ra thông tin lớp học thuộc ngành IT
 SELECT  CLASS.id, CLASS.name, CLASS.major_id , MAJOR.name as major
 FROM CLASS
 INNER JOIN MAJOR
 ON CLASS.major_id = MAJOR.id
 WHERE MAJOR.name = 'KHMT';
 
-
+-- Image1 
 SELECT  *
 FROM CLASS
 LEFT JOIN MAJOR
 ON CLASS.major_id = MAJOR.id
 WHERE MAJOR.id IS NULL
 
+-- Image 2
 SELECT *
 FROM CLASS
 RIGHT JOIN MAJOR

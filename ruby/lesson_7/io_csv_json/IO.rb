@@ -4,7 +4,7 @@ file = File.open("sample.txt", "w")
   file.puts "And this is line 3."
 file.close
 
-file = File.open("sample.txt", "r")
-  contents = file.read
-  puts contents
+contents = File.read("sample.txt")
+# contents = file.read
+puts contents
 file.close

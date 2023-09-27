@@ -1,0 +1,29 @@
+= form_with(model: product) do |form|
+  - if product.errors.any?
+    div style="color: red"
+      h2
+        | #{pluralize(product.errors.count, "error")} prohibited this product from being saved:
+
+      ul
+        - product.errors.each do |error|
+          li
+            = error.full_message
+
+  div
+    = form.label :name, style: "display: block"
+    = form.text_field :name
+
+  div
+    = form.label :image, style: "display: block"
+    = form.text_field :image
+
+  div
+    = form.label :price, style: "display: block"
+    = form.text_field :price
+
+  div
+    = form.label :description, style: "display: block"
+    = form.text_area :description
+
+  div
+    = form.submit

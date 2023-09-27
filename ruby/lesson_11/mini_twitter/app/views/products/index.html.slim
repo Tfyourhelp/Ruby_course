@@ -1,0 +1,11 @@
+p style="color: green"= notice
+
+h1 Products
+
+#products
+  - @products.each do |product|
+    == render product
+    p
+      = link_to "Show this product", product
+
+= link_to "New product", new_product_path

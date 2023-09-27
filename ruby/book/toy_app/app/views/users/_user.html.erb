@@ -1,0 +1,21 @@
+<div id="<%= dom_id user %>">
+  <p>
+    <strong>Name:</strong>
+    <%= user.name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= user.email %>
+  </p>
+
+<%# neu nhu user do chua co content thi else , co roi thi if --> tai vi khi ko co content thi user.microposts.where(user_id: user.id) se gay ra loi nen dung if user.microposts.any? de check neu co moi in , con khong thi nhay qua else %>
+  <p>
+    <strong>Content of the user's first micropost: </strong>
+    <% if user.microposts.any?%>
+      <%= user.microposts.where(user_id: user.id).first.content %>
+    <% else %>
+    <% end %>
+  </p>
+  
+</div>

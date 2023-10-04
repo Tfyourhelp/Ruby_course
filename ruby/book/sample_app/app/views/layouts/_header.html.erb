@@ -17,15 +17,17 @@
           id = "bs-example-navbar-collapse-1">
         <li><%= link_to "Home",   root_path %></li>
         <li><%= link_to "Help",   help_path %></li>
-        <% if logged_in? %>
-          <li><%= link_to "Users", "#" %></li>
+        <% if logged_in? %> <%# session[:user_id] = user.id khi ng dùng đăng nhập(trả về  user(có id) ) , (hàm create) , nếu kh thì k lấy được ở trên path của web --> bị lỗi k có user.id%>
+        <%# khi người dùng đăng nhập tk1 , chuyển sang trang user/2/edit --> có thể edit đc tk 2 --> phải chặn %>
+           <li><%= link_to "Users", users_path %></li> <%# trang users/index %>
           <li class="dropdown">
             <a href = "#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Profile", current_user%></li>
-              <li><%= link_to "Settings", "#" %></li>
+              <li><%= link_to "Profile", current_user %></li>
+
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li> <%# hàm curent_user --> trả về @user hoặc nil %>
               <li class = "divider" ></li>
               <li>
                 <%= button_to "Log out", logout_path, method: :delete %>  

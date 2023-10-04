@@ -132,8 +132,6 @@ footer {
   }
 }
 
-
-
 /* miscellaneous */
 
 .debug_dump {
@@ -219,20 +217,45 @@ input {
   height: auto !important;
 }
  
+.password-field {
+  margin-bottom: 10px; /* Điều chỉnh khoảng cách theo mong muốn */
+}
 
 #error_explanation {
   color: red;
   ul {
-    color: red;
-    margin: 0 0 30px 0;
+  color: red;
+  margin: 0 0 30px 0;
   }
 }
 
 .field_with_errors {
   @extend .has-error;
   .form-control {
-    color : $state-danger-text;
+  color: $state-danger-text;
   }
 }
 
-/* footer */
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}

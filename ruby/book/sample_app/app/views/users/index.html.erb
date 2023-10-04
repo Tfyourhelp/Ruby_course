@@ -1,0 +1,10 @@
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<%= paginate @users %>
+<ul class="users">
+  <% @users.each do |user| %>
+    <%= render partial: "user", locals: { user: user } %> 
+  <% end %>
+</ul>
+<%= paginate @users %>
